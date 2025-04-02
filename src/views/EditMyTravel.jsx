@@ -44,7 +44,7 @@ function EditMyTravel() {
       //   }
       // })
 
-      const resData = await axios.get(`http://localhost:4000/travel/one/${travelId}`)
+      const resData = await axios.get(`https://travel-service-server-by-prisma-rtu3.vercel.app/travel/one/${travelId}`)
 
       // const data = await resData.json()
       // setTravelPlace(data["data"].travelPlace)
@@ -158,7 +158,7 @@ function EditMyTravel() {
               <Button color="inherit">
                 {travellerFullname}
               </Button>
-              <Avatar src={travellerImage == '' ? Profile : `http://localhost:4000/images/traveller/${travellerImage}`} />
+              <Avatar src={travellerImage == '' ? Profile : `${travellerImage}`} />
               <Link to={'/'} style={{ color: 'red', textDecoration: 'none', marginLeft: '10px', fontWeight: 'bold' }}>
                 LOG OUT
               </Link>
@@ -198,7 +198,7 @@ function EditMyTravel() {
           <Avatar src={travelNewImage == null 
                         ? travelImage == ''
                         ? Place
-                        :`http://localhost:4000/images/travel/${travelImage}` 
+                        :`${travelImage}` 
                         : URL.createObjectURL(travelNewImage)} alt="travel logo"
             sx={{ width: 150, height: 150, mx: 'auto', my: 3 }} variant="rounded" />  
 

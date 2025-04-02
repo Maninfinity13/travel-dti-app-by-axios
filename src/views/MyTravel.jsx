@@ -31,7 +31,7 @@ function MyTravel() {
       //   }
       // })
 
-      const resData = await axios.get(`http://localhost:4000/travel/${traveller.travellerId}`)
+      const resData = await axios.get(`https://travel-service-server-by-prisma-rtu3.vercel.app/travel/${traveller.travellerId}`)
 
       if (resData.status == 200) {
         // const data = await resData.json()

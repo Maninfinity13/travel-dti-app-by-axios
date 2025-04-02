@@ -87,7 +87,7 @@ function EditProfile() {
         //   body: formData,
         // })
 
-        const response = await axios.put(`http://localhost:4000/traveller/${travellerId}`,formData, {
+        const response = await axios.put(`https://travel-service-server-by-prisma-rtu3.vercel.app/traveller/${travellerId}`,formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
@@ -134,7 +134,7 @@ function EditProfile() {
                   {travellerFullname}
                 </Button>
               </Link>
-              <Avatar src={travellerImage == '' ? Profile : `http://localhost:4000/images/traveller/${travellerImage}`} />
+              <Avatar src={travellerImage == '' ? Profile : `${travellerImage}`} />
               <Link to={'/'} style={{ color: 'red', textDecoration: 'none', marginLeft: '10px', fontWeight: 'bold' }}>
                 LOG OUT
               </Link>
@@ -165,7 +165,7 @@ function EditProfile() {
           </Typography>
           <TextField fullWidth type='password' value={travellerPassword} onChange={(e) => setTravellerPassword(e.target.value)} />
 
-          <Avatar src={travellerNewImage == null ? `http://localhost:4000/images/traveller/${travellerImage}` : URL.createObjectURL(travellerNewImage)} alt="travel logo"
+          <Avatar src={travellerNewImage == null ? `${travellerImage}` : URL.createObjectURL(travellerNewImage)} alt="travel logo"
             sx={{ width: 150, height: 150, mx: 'auto', my: 3 }} variant="rounded" />
 
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>

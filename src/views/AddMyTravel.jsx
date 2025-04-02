@@ -87,7 +87,7 @@ function AddMyTravel() {
         //   body: formData,
         // })
 
-        const response = await axios.post('http://localhost:4000/travel/', formData,{
+        const response = await axios.post('https://travel-service-server-by-prisma-rtu3.vercel.app/travel/', formData,{
           headers: {
             'Content-Type': 'multipart/form-data'
           }
@@ -127,7 +127,7 @@ function AddMyTravel() {
               <Button color="inherit">
                 {travellerFullname}
               </Button>
-              <Avatar src={travellerImage == '' ? Profile : `http://localhost:4000/images/traveller/${travellerImage}`} />
+              <Avatar src={travellerImage == '' ? Profile : `${travellerImage}`} />
               <Link to={'/'} style={{ color: 'red', textDecoration: 'none', marginLeft: '10px', fontWeight: 'bold' }}>
                 LOG OUT
               </Link>
